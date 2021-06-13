@@ -7,7 +7,7 @@ import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
  *
  * Created by ndhuy
  * Date 13/06/2021 - 10:48
- * Description: ...
+ * Description: Define Fraction Class
  */
 
 public class Fraction {
@@ -83,19 +83,8 @@ public class Fraction {
         }
     }
 
-    public int FindLargestCommonDivision(int a, int b) {
-        while(a != 0 && b != 0) {
-            if (a > b)
-                a = a - b;
-            else
-                b = b - a;
-        }
-
-        return a + b;
-    }
-
     public Fraction Optimize(Fraction fraction) {
-        int largestCommonDivision = FindLargestCommonDivision(fraction.numerator, fraction.denominator);
+        int largestCommonDivision = MyMath.FindLargestCommonDivision(fraction.numerator, fraction.denominator);
         fraction.numerator = fraction.numerator / largestCommonDivision;
         fraction.denominator = fraction.denominator / largestCommonDivision;
         return fraction;
