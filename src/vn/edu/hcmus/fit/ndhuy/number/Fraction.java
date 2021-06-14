@@ -1,7 +1,5 @@
 package vn.edu.hcmus.fit.ndhuy.number;
 
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
-
 /**
  * vn.edu.hcmus.fit.ndhuy.fraction
  *
@@ -84,7 +82,7 @@ public class Fraction {
     }
 
     public Fraction Optimize(Fraction fraction) {
-        int largestCommonDivision = MyMath.FindLargestCommonDivision(fraction.numerator, fraction.denominator);
+        int largestCommonDivision = MyMath.findLargestCommonDivision(fraction.numerator, fraction.denominator);
         fraction.numerator = fraction.numerator / largestCommonDivision;
         fraction.denominator = fraction.denominator / largestCommonDivision;
         return fraction;

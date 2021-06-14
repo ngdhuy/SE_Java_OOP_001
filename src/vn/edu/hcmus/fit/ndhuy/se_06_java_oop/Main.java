@@ -6,21 +6,32 @@ import vn.edu.hcmus.fit.ndhuy.number.MyDynamicArray;
 public class Main {
 
     public static void main(String[] args) {
-//        Fraction frac_1 = new Fraction();
-//        Fraction frac_2 = new Fraction(4, 8);
-//        System.out.println(frac_1);
-//        System.out.println(frac_2);
-//        Fraction frac_3 = frac_1.Sum(frac_2);
-//        System.out.println(frac_3);
-//        if (frac_1.Equal(frac_2))
-//            System.out.println(frac_1 + " is equal " + frac_2);
-//        else if(frac_1.Less(frac_2))
-//            System.out.println(frac_1 + " is less than " + frac_2);
-//        else
-//            System.out.println(frac_1 + " is greater than " + frac_2);
-        int[] arr = {1, 2, 3, 4, 5};
+        int[] arr = {8, 5, 9, 4, 7, 2, 6, 1, 3, 0, 2};
         MyDynamicArray myArray = new MyDynamicArray();
         myArray.setArray(arr);
-        System.out.println(myArray);
+        myArray.output();
+        myArray.sortIncrease();
+        myArray.output();
+        myArray.sortDecrease();
+        myArray.output();
+        myArray.insertHead(100);
+        myArray.output();
+        myArray.insertTail(888);
+        myArray.output();
+        myArray.insertAt(0, 5);
+        myArray.output();
+//        myArray.removeAt(5);
+//        myArray.output();
+        myArray.removeAll(0);
+        myArray.output();
+        myArray.updateAt(100, 5);
+        myArray.output();
+        myArray.updateAll(100, 65);
+        myArray.output();
+
+        String str = "1 2 3 4 5 6 a 8 9 0";
+        MyDynamicArray resultArray = MyDynamicArray.parseMyDynamicArray(str, " ");
+        if (resultArray != null)
+            resultArray.output();
     }
 }
