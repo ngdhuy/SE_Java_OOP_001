@@ -9,4 +9,6 @@ package vn.edu.hcmus.fit.ndhuy.polygon;
 public interface PolygonInterface {
     public double calAcreage();
     public double calPerimeter();
+    public String objectToString();
+    public void stringToObject(String string);
 }

@@ -47,4 +47,16 @@ public class Point2D {
     public String toString() {
         return String.format("(%d, %d)", this.x, this.y);
     }
+
+    public String objectToString() {
+        return String.format("%d,%d", this.x, this.y);
+    }
+
+    public static Point2D parsePoint2D(String string) {
+        String[] arrString = string.split(",");
+        Point2D point = new Point2D();
+        point.x = Integer.parseInt(arrString[0]);
+        point.y = Integer.parseInt(arrString[1]);
+        return point;
+    }
 }

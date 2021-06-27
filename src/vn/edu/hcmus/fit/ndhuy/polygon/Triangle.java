@@ -71,4 +71,17 @@ public class Triangle implements PolygonInterface {
     public String toString() {
         return String.format("Triangle: A = %s B = %s C = %s", this.pointA.toString(), this.pointB.toString(), this.pointC.toString());
     }
+
+    @Override
+    public String objectToString() {
+        return String.format("Triangle|%s|%s|%s", this.pointA.objectToString(), this.pointB.objectToString(), this.pointC.objectToString());
+    }
+
+    @Override
+    public void stringToObject(String string) {
+        String[] arrString = string.split("\\|");
+        this.pointA = Point2D.parsePoint2D(arrString[1]);
+        this.pointB = Point2D.parsePoint2D(arrString[2]);
+        this.pointC = Point2D.parsePoint2D(arrString[3]);
+    }
 }

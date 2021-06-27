@@ -1,5 +1,7 @@
 package vn.edu.hcmus.fit.ndhuy.polygon;
 
+import java.util.concurrent.Semaphore;
+
 /**
  * vn.edu.hcmus.fit.ndhuy.polygon
  * Created by ndhuy
@@ -64,6 +66,19 @@ public class Rectangle implements PolygonInterface {
     }
 
     public String toString() {
-        return  String.format("Rectange: width = %f, height = %f, point left up %s", this.width, this.height, this.pointLeftUp.toString());
+        return  String.format("Rectangle: width = %f, height = %f, point left up %s", this.width, this.height, this.pointLeftUp.toString());
+    }
+
+    @Override
+    public String objectToString() {
+        return String.format("Rectangle|%f|%f|%s", this.width, this.height, this.pointLeftUp.objectToString());
+    }
+
+    @Override
+    public void stringToObject(String string) {
+        String[] arrString = string.split("\\|");
+        this.width = Double.parseDouble(arrString[1]);
+        this.height = Double.parseDouble(arrString[2]);
+        this.pointLeftUp = Point2D.parsePoint2D(arrString[3]);
     }
 }

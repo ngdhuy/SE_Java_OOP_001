@@ -54,4 +54,17 @@ public class Circle implements PolygonInterface {
     public String toString() {
         return String.format("Circle: r = %f, center = %s", this.radius, this.center.toString());
     }
+
+    @Override
+    public String objectToString() {
+        return String.format("Circle|%f|%s", this.radius, this.center.objectToString());
+    }
+
+    @Override
+    public void stringToObject(String string) {
+        String[] arrString = string.split("\\|");
+        // Circle|10.5|2,3 -> arrString = ["Circle", "10.5", "2,3"]
+        this.radius = Double.parseDouble(arrString[1]);
+        this.center = Point2D.parsePoint2D(arrString[2]);
+    }
 }
